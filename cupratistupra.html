@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enigma 5</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #1a1a1a;
+            color: #f1f1f1;
+            font-family: 'Courier New', Courier, monospace;
+        }
+        .section {
+            margin-top: 50px;
+            padding: 40px 25px;
+            background-color: rgba(30, 30, 30, 0.85);
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+            text-align: center;
+        }
+        .btn-choice {
+            background-color: #4d94ff;
+            border-color: #4d94ff;
+            margin: 10px;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        .btn-choice:hover {
+            background-color: #0033cc;
+            transform: scale(1.05);
+        }
+        .choice-container {
+            margin-top: 15px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <iframe src="audio.html" style="display: none;"></iframe>
+
+<section class="section">
+    <h3>Enigma 5: The Unknown HTTP Method</h3>
+    <p>As you continue to monitor the server logs, you come across a suspicious request that uses an unknown HTTP method. The method is neither GET nor POST, but rather something like “PURGE” or “TRACE.” This method seems to bypass the server’s security measures and may unlock access to a hidden resource.</p>
+    <p><strong>Description:</strong> Analyze the HTTP methods provided and determine which one can bypass security, granting you access to sensitive data. The correct method will allow you to temporarily view a map of compromised systems.</p>
+    
+    <img src="https://www.example.com/hacker-map.jpg" alt="Server Log Analysis" class="choice-image">
+    
+    <p><strong>Clue:</strong> Common HTTP methods like GET and POST are used for regular requests, but methods like TRACE or PURGE are rare and can sometimes be used to retrieve sensitive information.</p>
+
+    <!-- HTTP Method Choices -->
+    <div class="choice-container">
+        <button class="btn btn-choice" onclick="checkAnswer('A')">A) GET</button>
+        <button class="btn btn-choice" onclick="checkAnswer('B')">B) TRACE</button>
+        <button class="btn btn-choice" onclick="checkAnswer('C')">C) PURGE</button>
+        <button class="btn btn-choice" onclick="checkAnswer('D')">D) HEAD</button>
+    </div>
+
+    <p id="resultEnigma5" class="mt-4"></p>
+    <a href="enigma6.html" id="nextEnigmaLink" class="btn btn-success mt-3" style="display:none;">Proceed to the next enigma</a>
+</section>
+
+<script>
+    // Function to check the answer
+    function checkAnswer(answer) {
+        const correctAnswer = 'B'; // The correct answer is TRACE
+        const result = document.getElementById("resultEnigma5");
+        const nextLink = document.getElementById("nextEnigmaLink");
+
+        if (answer === correctAnswer) {
+            result.textContent = "Correct! You’ve uncovered the secret method TRACE, granting you access to the map of compromised systems.";
+            result.style.color = "lime";
+            nextLink.style.display = "inline";
+        } else {
+            result.textContent = "Incorrect. Try again!";
+            result.style.color = "red";
+        }
+    }
+</script>
+
+</body>
+</html>

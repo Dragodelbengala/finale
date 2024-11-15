@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enigma 4</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #1a1a1a;
+            color: #f1f1f1;
+            font-family: 'Courier New', Courier, monospace;
+        }
+        .section {
+            margin-top: 50px;
+            padding: 40px 25px;
+            background-color: rgba(30, 30, 30, 0.85);
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+            text-align: center;
+        }
+        .btn-choice {
+            background-color: #4d94ff;
+            border-color: #4d94ff;
+            margin: 10px;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        .btn-choice:hover {
+            background-color: #0033cc;
+            transform: scale(1.05);
+        }
+        .choice-container {
+            margin-top: 15px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <iframe src="audio.html" style="display: none;"></iframe>
+
+<section class="section">
+    <h3>Enigma 4: Il Campo User-Agent Alterato</h3>
+    <p>Procedendo nei log, scopri che un hacker sta cercando di accedere al sistema camuffando il proprio User-Agent. La sua richiesta appare come quella di un “bot” invece che di un normale browser. Solo identificando il vero User-Agent potrai smascherare il responsabile.</p>
+    <p><strong>Descrizione:</strong> Analizza le informazioni sugli User-Agent forniti e trova quello che si comporta da “umano”. Solo il vero browser rivelerà l'identità dell’intruso.</p>
+    <img src="https://www.dgroove.it/wp-content/uploads/2019/07/attacco-hacker-hackerato-1-1024x576.jpg" alt="URL" class="choice-image">
+    <p><strong>Indizio:</strong> Un User-Agent autentico usa nomi di browser comuni come “Mozilla” o “Chrome”, mentre gli User-Agent sospetti possono sembrare generici o legati a “bot”.</p>
+    
+
+    <!-- Opzioni di User-Agent -->
+    <div class="choice-container">
+        <button class="btn btn-choice" onclick="checkAnswer('A')">A) Mozilla/15.0 - Chrome/92.0</button>
+        <button class="btn btn-choice" onclick="checkAnswer('B')">B) Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/92.0</button>
+        <button class="btn btn-choice" onclick="checkAnswer('C')">C) Windows NT 10.0; Win44; x44</button>
+        <button class="btn btn-choice" onclick="checkAnswer('D')">D) Google bot</button>
+    </div>
+
+    <p id="resultEnigma4" class="mt-4"></p>
+    <a href="enigma5.html" id="nextEnigmaLink" class="btn btn-success mt-3" style="display:none;">Prosegui al prossimo enigma</a>
+</section>
+
+<script>
+    // Funzione per verificare la risposta
+    function checkAnswer(answer) {
+        const correctAnswer = 'B'; // La risposta corretta
+        const result = document.getElementById("resultEnigma4");
+        const nextLink = document.getElementById("nextEnigmaLink");
+
+        if (answer === correctAnswer) {
+            result.textContent = "Corretto! Hai identificato il vero User-Agent.";
+            result.style.color = "lime";
+            nextLink.style.display = "inline";
+        } else {
+            result.textContent = "Risposta errata. Riprova!";
+            result.style.color = "red";
+        }
+    }
+</script>
+
+</body>
+</html>

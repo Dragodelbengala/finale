@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enigma 7</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #1a1a1a;
+            color: #f1f1f1;
+            font-family: 'Courier New', Courier, monospace;
+        }
+        .section {
+            margin-top: 50px;
+            padding: 40px 25px;
+            background-color: rgba(30, 30, 30, 0.85);
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+            text-align: center;
+        }
+        .btn-choice {
+            background-color: #4d94ff;
+            border-color: #4d94ff;
+            margin: 10px;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        .btn-choice:hover {
+            background-color: #0033cc;
+            transform: scale(1.05);
+        }
+        .choice-container {
+            margin-top: 15px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <iframe src="audio.html" style="display: none;"></iframe>
+
+<section class="section">
+    <h3>Enigma 7: La Decodifica dell'Autenticazione HTTP</h3>
+    <p>Hai raggiunto l'ultima fase del sistema. In un'ultima richiesta HTTP, trovi il campo di autenticazione con una stringa codificata in base64. Questo campo contiene un messaggio segreto che rivela informazioni cruciali per fermare l'attacco.</p>
+    <p><strong>Descrizione:</strong> Devi decodificare il campo Authorization in base64 per ottenere il messaggio nascosto. Il messaggio ti dirà chi è l'intruso, la sua posizione e il suo piano di attacco.</p>
+    
+    <img src="https://www.example.com/hacker-authentication.jpg" alt="Sm9obiBEb2UsIFBvc2l6aW9uZTogU2FsYSBTZXJ2ZXIsIFBsYW46IEF0dGFja28gYWxsZSBh
+    bGUgNCowIEFN
+    " class="choice-image">
+    
+    <p><strong>Pista:</strong> Decodificando la stringa base64 troverai il nome dell'intruso, la sua posizione e l'ora dell'attacco. Utilizza uno strumento di decodifica base64 per ottenere il messaggio.</p>
+
+    <!-- Scelte di risposta -->
+    <div class="choice-container">
+        <p>Decodifica il campo di autenticazione per scoprire l'intruso e il suo piano:</p>
+        <button class="btn btn-choice" onclick="checkAnswer('A')">A) Mario Rossi, Posizione: Sala Server, Piano: Attacco alle 5:00 AM</button>
+        <button class="btn btn-choice" onclick="checkAnswer('B')">B) John Doe, Posizione: Sala Server, Piano: Attacco alle 4:00 AM</button>
+        <button class="btn btn-choice" onclick="checkAnswer('C')">C) Jane Smith, Posizione: Ufficio, Piano: Attacco alle 6:00 AM</button>
+        <button class="btn btn-choice" onclick="checkAnswer('D')">D) Luca Bianchi, Posizione: Sala Sicurezza, Piano: Attacco alle 7:00 AM</button>
+    </div>
+
+    <p id="resultEnigma7" class="mt-4"></p>
+    <a href="conclusione.html" id="nextEnigmaLink" class="btn btn-success mt-3" style="display:none;">Procedi...</a>
+</section>
+
+<script>
+    // Funzione per verificare la risposta
+    function checkAnswer(answer) {
+        const correctAnswer = 'B'; // La risposta corretta è John Doe, Sala Server, Attacco alle 4:00 AM
+        const result = document.getElementById("resultEnigma7");
+        const nextLink = document.getElementById("nextEnigmaLink");
+
+        if (answer === correctAnswer) {
+            result.textContent = "Corretto! L'intruso si chiama John Doe, si trova nella Sala Server e attaccherà alle 4:00 AM. Hai fermato l'attacco!";
+            result.style.color = "lime";
+            nextLink.style.display = "inline";
+        } else {
+            result.textContent = "Risposta errata. Prova ancora!";
+            result.style.color = "red";
+        }
+    }
+</script>
+
+</body>
+</html>

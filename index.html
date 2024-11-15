@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operazione Cerberus: Infiltrazione</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #000000;
+            color: #e0e0e0;
+            font-family: 'Courier New', Courier, monospace;
+        }
+        .intro-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            padding: 20px;
+            text-align: center;
+            background: linear-gradient(120deg, rgb(0, 0, 0), rgba(0, 0, 0, 0.6)), url('https://www.transparenttextures.com/patterns/asfalt-dark.png');
+            background-size: cover;
+            background-position: center;
+        }
+        h1 {
+            font-size: 2.5em;
+            color: #ff6666;
+            margin-bottom: 20px;
+        }
+        p {
+            font-size: 1.2em;
+            max-width: 800px;
+        }
+        .intro-image {
+            width: 100%;
+            max-width: 500px;
+            margin: 20px 0;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+        }
+        .btn-start {
+            margin-top: 30px;
+            padding: 15px 30px;
+            font-size: 1.2em;
+            font-weight: bold;
+            background-color: #ff4d4d;
+            border-color: #ff4d4d;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        .btn-start:hover {
+            background-color: #cc0000;
+            transform: scale(1.1);
+        }
+        #audioControl {
+            margin-top: 20px;
+            color: #ff6666;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<div class="intro-section">
+    <h1>Operazione Cerberus: Infiltrazione</h1>
+    <p>Sei stato selezionato per un incarico top secret. Un’entità sconosciuta ha compromesso i nostri server HTTPS. Il tuo obiettivo è decifrare e superare le barriere di sicurezza, recuperare le informazioni e bloccare l’operazione prima che sia troppo tardi.</p>
+
+    <!-- Immagine inserita al centro, tra le due frasi -->
+    <img src="https://via.placeholder.com/500x300" alt="Immagine rilevante per la missione" class="intro-image">
+    <!-- Sostituisci l'URL sopra con il percorso dell'immagine desiderata -->
+
+    <p>Ogni server che incontrerai è protetto da codici cifrati e trappole. Il primo livello di accesso è stato violato: hai trovato un file binario con un indizio. Decifralo per ottenere la password e procedere.</p>
+
+    <button class="btn btn-start" onclick="window.location.href='enigma1.html'">Inizia il Primo Enigma</button>
+
+    <p id="audioControl" onclick="toggleAudio()">🎶 Attiva/Disattiva Audio</p>
+    <audio id="backgroundAudio" loop>
+        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+        <!-- Se il link non funziona o preferisci un audio personalizzato, sostituisci il link sopra -->
+        <iframe src="audio.html" style="display: none;"></iframe>
+    </audio>
+</div>
+
+<script>
+    // Funzione per gestire la traccia audio di sottofondo
+    const audio = document.getElementById('backgroundAudio');
+    const audioControl = document.getElementById('audioControl');
+    let isAudioPlaying = false;
+
+    function toggleAudio() {
+        if (isAudioPlaying) {
+            audio.pause();
+            audioControl.textContent = "🎶 Attiva Audio";
+        } else {
+            audio.play();
+            audioControl.textContent = "🔊 Disattiva Audio";
+        }
+        isAudioPlaying = !isAudioPlaying;
+    }
+</script>
+
+</body>
+</html>
