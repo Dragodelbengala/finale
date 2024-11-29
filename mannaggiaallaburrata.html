@@ -68,7 +68,7 @@
         const nextLink = document.getElementById("nextEnigmaLink");
 
         if (userAnswer === correctAnswer) {
-            result.textContent = "¡Correcto! Has descifrado el valor de la cookie. El mensaje revela que el ataque ocurrirá a las 3:00 AM.";
+            result.innerHTML = "¡Correcto! Has descifrado el valor de la cookie. El mensaje revela que el ataque ocurrirá a las 3:00 AM.";
             result.style.color = "lime";
             nextLink.style.display = "inline";
         } else {
