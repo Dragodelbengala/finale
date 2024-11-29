@@ -67,7 +67,7 @@
         const nextLink = document.getElementById("nextEnigmaLink");
 
         if (answer === correctAnswer) {
-            result.textContent = "Correct! You’ve uncovered the secret method TRACE, granting you access to the map of compromised systems.";
+            result.innerHTML = "Correct! You’ve uncovered the secret method TRACE, granting you access to the map of compromised systems.";
             result.style.color = "lime";
             nextLink.style.display = "inline";
         } else {
