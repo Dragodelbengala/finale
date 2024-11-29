@@ -58,7 +58,7 @@
         <button class="btn btn-choice" onclick="checkAnswer('D')">D) Luca Bianchi, Posizione: Sala Sicurezza, Piano: Attacco alle 7:00 AM</button>
     </div>
 
-    <p id="resultEnigma6" class="mt-4"></p>
+    <p id="resultEnigma7" class="mt-4"></p>
     <a href="carminedovecazzosei.html" id="nextEnigmaLink" class="btn btn-success mt-3" style="display:none;">Procedi...</a>
 </section>
 
@@ -70,11 +70,11 @@
         const nextLink = document.getElementById("nextEnigmaLink");
 
         if (answer === correctAnswer) {
-            result.textContent = "Corretto! L'intruso si chiama John Doe, si trova nella Sala Server e attaccherà alle 4:00 AM. Hai fermato l'attacco!";
+            result.innerHTML = "Corretto! L'intruso si chiama John Doe, si trova nella Sala Server e attaccherà alle 4:00 AM. Hai fermato l'attacco!";
             result.style.color = "lime";
             nextLink.style.display = "inline";
         } else {
-            result.textContent = "Risposta errata. Prova ancora!";
+            result.innerHTML = "Risposta errata. Prova ancora!";
             result.style.color = "red";
         }
     }
